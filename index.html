@@ -178,7 +178,7 @@
     <!-- Navbar underline -->
     <script>
       var menu = document.getElementsByClassName('nav');
-      navActiveBar(menu[0], (tab, width, tempMarginLeft) => {                          
+      navActiveBar(menu[0], (tab, width, tempMarginLeft) => {
         tab.onmouseover = () => { // when tab is hovered over
           $('.active').css({width: width + '%', 'margin-left': tempMarginLeft + '%'}); // adjust active bar
         }

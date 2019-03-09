@@ -124,12 +124,9 @@ main, #contact {
 
 .toggle {
   position: absolute;
-  /* top: 0.5rem;
-  left: 0.5rem; */
   width: 40px;
   right: 22px;
   top: -9px;
-  /* width: 30px; */
   height: 45px;
   z-index: 30;
   cursor: pointer;
@@ -137,6 +134,7 @@ main, #contact {
   border: none;
   display: none;
 }
+
 @media only screen and (max-width: 766px) {
   .toggle {
     display: block;
