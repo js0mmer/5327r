@@ -13,9 +13,9 @@
     <header class="navbar">
       <div class="row">
         <a class="logo" href="#"><span class="blue">5327</span><span class="red">R</span></a>
-        <div class="toggle">
+        <button class="toggle">
           <span class="icon"></span>
-        </div>
+        </button>
         <nav>
           <ul class="nav">
             <li><a href="#about">About Us</a></li>
@@ -155,17 +155,21 @@
         $('.navbar').removeClass('open');
       });
 
+      var navbarHeight = $('.navbar').outerHeight(); // define so it's not messed up when mobile navbar expands
+
       // Anchor links
       $(document).on('click', 'a[href^="#"]', function(e) {
         e.preventDefault();
 
-        if ($.attr(this, 'href') == '#') {
+        var href = $(this).attr('href');
+
+        if (href == '#') {
           $('html, body').animate({
             scrollTop: 0
           }, 500);
         } else {
           $('html, body').animate({
-            scrollTop: $($.attr(this, 'href')).offset().top - 64 // navbar blocks top 64 pixels
+            scrollTop: $(href).offset().top - navbarHeight // account for navbar blocking top
           }, 500);
         }
       });
@@ -174,51 +178,49 @@
       $('.send-btn').click(function() {
         if ($('input[type=text]').val().length > 0 && $('input[type=email]').val().length > 0 && $('input[type=email]').val().includes("@")) $(this).addClass('sending');
       });
-    </script>
-    <!-- Navbar underline -->
-    <script>
-      var menu = document.getElementsByClassName('nav');
-      navActiveBar(menu[0], (tab, width, tempMarginLeft) => {
-        tab.onmouseover = () => { // when tab is hovered over
-          $('.active').css({width: width + '%', 'margin-left': tempMarginLeft + '%'}); // adjust active bar
-        }
+      
+      // Navbar active tab underline
+      if (screen.width > 766) { // only for desktop
+        navActiveBar($('.nav'), (tab, width, tempMarginLeft) => {
+          tab.mouseover(() => { // when tab is hovered over
+            $('.active').css({width: width + '%', marginLeft: tempMarginLeft + '%'}); // adjust active bar
+          });
 
-        $('main').mouseover(() => { // move underline back to active tab when user unhovers other tab
-          scrollProgress(tab, width, tempMarginLeft);
+          $('main').mouseover(() => { // move underline back to active tab when user unhovers other tab
+            scrollProgress(tab, width, tempMarginLeft);
+          });
+
+          $('html, body').scroll((e) => { // move active underline as user scrolls
+            // if scroll triggered manually
+            if (e.originalEvent) scrollProgress(tab, width, tempMarginLeft);
+          });
         });
 
-        $(window).scroll(() => { // move active underline as user scrolls
-          scrollProgress(tab, width, tempMarginLeft);
-        });
-      });
-
-      function scrollProgress(tab, width, tempMarginLeft) { // adjust active tab based on section user is currently viewing
-        var scrollBottom = $(window).scrollTop() + $(window).height();
-          var section = $($(tab).children().first().attr("href")); // select correct section from href attribute of tab
+        function scrollProgress(tab, width, tempMarginLeft) { // adjust active tab based on section user is currently viewing
+          var scrollBottom = $(window).scrollTop() + $(window).height();
+          var section = $(tab.children().first().attr('href')); // select correct section from href attribute of tab
 
           if (scrollBottom > section.offset().top + section.height() / 2) { // if scroll bottom is at least halfway through section then move the active bar
-            $('.active').css({width: width + '%', 'margin-left': tempMarginLeft + '%'}); // adjust active bar
+            $('.active').css({width: width + '%', marginLeft: tempMarginLeft + '%'}); // adjust active bar
           }
-      }
+        }
 
-      function navActiveBar(menu, callback) {
-        let menu_width = menu.offsetWidth;
-        menu = menu.getElementsByTagName('li'); // select only li tags (all the tabs)
-        var marginLeft = [];
-        // Loop through nav children (li)
-        [].forEach.call(menu, (tab, index) => {
-          // Dynamic width/margin calculation
-          var width = getPercentage(tab.offsetWidth + 35, menu_width); // 35px left margin
-          var tempMarginLeft = 0;
-          // don't modify first element's positioning
-          if (index != 0) tempMarginLeft = marginLeft.reduce((a, b) => a + b, 0); // set temp margin of active bar to sum of marginLefts
-          callback(tab, width, tempMarginLeft); // set mouse event hover/click
-          marginLeft.push(width); // store width in array to use for positioning underlines on following tabs
-        });
-      }
+        function navActiveBar(menu, callback) {
+          var marginLeft = [];
+          menu.children('li').each(function(index) { // Loop through nav children (li)
+            // Dynamic width/margin calculation
+            var width = getPercentage($(this).width() + parseInt($(this).css('marginLeft')), menu.width());
+            var tempMarginLeft = 0;
+            // don't modify first element's positioning
+            if (index != 0) tempMarginLeft = marginLeft.reduce((a, b) => a + b, 0); // set temp margin of active bar to sum of widths of previous tabs
+            callback($(this), width, tempMarginLeft); // callback
+            marginLeft.push(width); // store width in array to use for positioning underlines on following tabs
+          });
+        }
 
-      function getPercentage(min, max) {
-        return min / max * 100;
+        function getPercentage(min, max) {
+          return min / max * 100;
+        }
       }
     </script>
   </body>
