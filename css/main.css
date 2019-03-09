@@ -1,0 +1,427 @@
+/* ======= */
+/* GENERAL */
+/* ======= */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+body {
+  overflow-x: hidden;
+}
+
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+main {
+  margin-bottom: 30px;
+}
+
+::selection {
+  background: #B4D5FF;
+}
+
+.blue {
+  color: #0077BE;
+}
+
+.red {
+  color: #ED3A43;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.margin-right {
+  margin-right: 0.5em;
+}
+
+@media only screen and (max-width: 766px) {
+  main img {
+    margin-bottom: 0.5em;
+  }
+}
+
+/* ====== */
+/* BANNER */
+/* ====== */
+
+.banner {
+  height: calc(100vh + 5vw);
+  background: gray;
+  border-radius: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .banner:after {
+    position: absolute;
+    left: 0;
+    bottom: -5vw;
+    width: 100vw;
+    content: '';
+    border-left: 100vw solid transparent;
+    border-bottom: 5vw solid white;
+  }
+}
+
+#particles-js {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh + 5vw);
+}
+
+.banner img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+.banner .fa-chevron-down {
+  position: absolute;
+  text-decoration: none;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  bottom: 60px;
+  transition: opacity 0.5s;
+  animation: bounce 2.5s infinite;
+  font-size: 3.5rem;
+  color: white;
+  z-index: 10;
+}
+
+/* ========== */
+/* NAV TOGGLE */
+/* ========== */
+
+.toggle {
+  position: absolute;
+  /* top: 0.5rem;
+  left: 0.5rem; */
+  width: 40px;
+  right: 22px;
+  top: -9px;
+  /* width: 30px; */
+  height: 45px;
+  z-index: 30;
+  cursor: pointer;
+  background: none;
+  border: none;
+  display: none;
+}
+@media only screen and (max-width: 766px) {
+  .toggle {
+    display: block;
+  }
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.toggle .icon {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 32px;
+  height: 2px;
+  background: #8f8f8f;
+  transition: 0.4s ease-out;
+}
+
+.toggle .icon:before, .toggle .icon:after {
+  transition: 0.25s ease-out;
+  position: absolute;
+  width: 32px;
+  height: 2px;
+  background: #8f8f8f;
+  content: '';
+}
+
+.toggle .icon:before {
+  top: -10px;
+  left: 0;
+}
+
+.toggle .icon:after {
+  top: 10px;
+  left: 0;
+}
+
+.open .toggle .icon {
+  background: transparent;
+  transition: 0.4s ease-out;
+  transform: rotate(180deg);
+}
+
+.open .toggle .icon:before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.open .toggle .icon:after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* === */
+/* NAV */
+/* === */
+
+header a:hover {
+  text-decoration: none;
+}
+
+.navbar {
+  position: fixed;
+  max-height: 70px;
+  z-index: 20;
+  width: 100%;
+  padding-top: 17px;
+  background: none;
+  overflow: hidden;
+  transition: 0.3s;
+  opacity: 0;
+  top: -100px;
+  padding-bottom: 6px;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media only screen and (max-width: 766px) {
+  .navbar {
+    padding-top: 25px;
+  }
+}
+
+.open {
+  max-height: 400px !important;
+}
+
+.sticky {
+  background-color: #fff;
+  opacity: 1;
+  top: 0px;
+  border-bottom: 1px solid gainsboro;
+}
+
+.logo {
+  width: 50px;
+  font-size: 25px;
+  color: #8f8f8f;
+  text-transform: uppercase;
+  float: left;
+  display: block;
+  margin-top: 0;
+  line-height: 1;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+@media only screen and (max-width: 766px) {
+  .logo {
+    float: none;
+  }
+}
+
+nav {
+  float: right;
+  width: 60%;
+}
+
+@media only screen and (max-width: 766px) {
+  nav {
+    width: 100%;
+  }
+}
+
+.nav {
+  list-style: none;
+  overflow: hidden;
+  text-align: right;
+  float: right;
+  overflow: visible;
+}
+
+@media only screen and (max-width: 766px) {
+  .nav {
+    padding-top: 10px;
+    margin-bottom: 22px;
+    float: left;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+.nav li {
+  display: inline-block;
+  position: relative;
+  margin-left: 35px;
+  line-height: 1.5;
+  user-select: none;
+}
+
+@media only screen and (max-width: 766px) {
+  .nav li {
+    width: 100%;
+    padding: 7px 0;
+    margin: 0;
+  }
+}
+
+.nav a {
+  color: #888;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.navbar .row {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 2%;
+}
+
+.active {
+  position: relative;
+  content: '';
+  left: 17.5px;
+  bottom: -15px;
+  height: 2px;
+  width: 0;
+  background: #0077BE;
+  transition: 0.2s;
+}
+
+@media only screen and (max-width: 766px) {
+  .active {
+    display: none;
+  }
+}
+
+/* ==== */
+/* FORM */
+/* ==== */
+
+form {
+  max-width: 300px;
+}
+
+input, textarea {
+  display: block;
+  padding: 5px;
+  width: 300px;
+  border: none;
+  border-bottom: 1px solid #757575;
+  max-width: 100%;
+  outline: none;
+}
+
+textarea {
+  min-height: 51px;
+  resize: vertical;
+}
+
+input:focus ~ .underline, textarea:focus ~ .underline {
+  width: 100%;
+  left: 0;
+}
+
+.send-btn {
+  background: none;
+  border: 3px solid #0077BE;
+  color: #0077BE;
+  padding: 15px 25px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  box-shadow: inset 0 0 #0077BE;
+  transition: 0.3s;
+  user-select: none;
+}
+
+.send-btn:hover, .send-btn:focus {
+  box-shadow: inset 0 50px #0077BE;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+
+.sending {
+  width: 36px;
+  border-radius: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  border-color: #bbb;
+  border-width: 3px;
+  font-size: 0;
+  border-left-color: #0077BE;
+  animation: rotate 2s 0.25s linear infinite;
+}
+
+.sending:after {
+  background: white;
+}
+
+.sending:hover {
+  box-shadow: none;
+}
+
+.underline {
+  display: block;
+  position: relative;
+  margin-bottom: 10px;
+  width: 0;
+  max-width: 100%;
+  height: 2px;
+  margin-top: -2px;
+  background: #0077BE;
+  transition: 0.3s;
+  left: 50%;
+}
+
+/* ========== */
+/* ANIMATIONS */
+/* ========== */
+
+@keyframes bounce {
+  0% {
+    transform: translate(-50%, 0%);
+  } 50% {
+    transform: translate(-50%, 50%);
+  } 100% {
+    transform: translate(-50%, 0%);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  } to {
+    transform: rotate(360deg);
+  }
+}

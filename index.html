@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>5327R</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link rel="stylesheet" href="css/all.min.css" type="text/css" />
+    <link rel="icon" href="images/logo.png" type="image/png" />
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="row">
+        <a class="logo" href="#"><span class="blue">5327</span><span class="red">R</span></a>
+        <div class="toggle">
+          <span class="icon"></span>
+        </div>
+        <nav>
+          <ul class="nav">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#robot">Our Robot</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <span class="active"></span>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="banner jumbotron">
+      <div id="particles-js"></div>
+      <img src="images/logo.png" />
+      <a href="#about" class="fa fa-chevron-down"></a>
+    </div>
+    <main>
+      <section id="about">
+        <div class="container">
+          <div class="layer" data-depth="0.4">
+            <div id="particles-js"></div>
+          </div>
+          <h1><span class="blue">About</span> Us</h1>
+            <img src="images/team.PNG" class="col-md-8 pull-left" />
+            <p>Gael Force Robotics Club is an organization dedicated to providing a meaningful engineering experience through the VEX Robotics Competition. The organization contains five competition teams aimed at competitive success in the Northern California region, and one development academy, with a goal of educating the newer, less-experienced members to prepare their skills for a competitive environment. Our competition teams have experienced much success in our region, becoming a notable name that commonly wins judged awards and perform well in the tournament itself. This team, Gael Force R, is one of these teams that aspire to mirror the success of our organization and excel competitively, while at the same time fostering the talents of the less experienced members to ensure that they advance both as engineers and as individuals. We hope to strive for the best in all aspects of engineering, and create a nondiscriminatory and trusted environment while doing so. While competitive viability is important, far more important is the education and growth of all of our members, both in our team and in our club, as we interact with all fields of STEM. We want to work efficiently and allow for input from each and every member. Each of our members, despite their varying experience with VEX Robotics specifically, were picked due to their dedication and desire to learn and succeed. Our primary goal as a team is the development of our talents in not just engineering-related fields, but in all. VEX Robotics is far more than just building a robot. There is a strong communal aspect of sharing ideas and interaction that our team believes is essential and beneficial. As a team, we hope to learn how to design, build, document, interact, and much more.</p>
+        </div>
+      </section>
+      <section id="robot">
+        <div class="container">
+          <h1>Our <span class="red">Robot</span></h1>
+          <img src="images/robot.PNG" class="col-md-6 pull-right" />
+          <ul>
+            <li>Base:</li>
+            <ul>
+              <li>Tank Drive</li>
+              <ul>
+                <li>H drive</li>
+                <li>6 wheel, 4 motor</li>
+                <li>Crossbars on bottom to allow lower attachment of other features and lower center of gravity</li>
+                <li>Base wide intake, attached “hanging” ; empty space when climbing </li>
+                <li>6 motor to 4 motor because excessive amount of motors was not as effective as expected</li>
+                <li>Move side channels by 1 hole in for proper sizing</li>
+                <li>Chain allows for slop and skipping, which is necessary if there's too much resistance</li>
+                <li>Center wheel with 2 bands </li>
+              </ul>
+            </ul>
+            <li>Catapult</li>
+            <ul>
+              <li>Change from flywheel</li>
+              <li>New decision matrix displayed in notebook</li>
+              <li>Smaller 20 hole catapult compared to standard (25)</li>
+              <li>Shorter length means less torque </li>
+              <li>Banding is close at first and stretches out later to provide more resistance, power function</li>
+              <li>Double ball catapult</li>
+              <li>Instead of having pinion to slip gear to 84 tooth, we have pinion and slip gear on side and 84 is perpendicular for lower center of gravity </li>
+              <li>Center of gravity would be more to center </li>
+              <li>Double ball catapult</li>
+              <li>Ratchet</li>
+              <li>Powered at both sides of the gear </li>
+            </ul>
+            <li>Ball Intake:Rollers</li>
+            <ul>
+              <li>Size is increasingly smaller and wider so that it is smoother, 2 balls to be taken ins</li>
+              <li>Most catapults deal with the issue of ball sliding back into intake. This is because the gear is orientated forward. Our gears are not orientated this way because the gear will bounce back only into the gear</li>
+              <li>7 to 3 and then 7 to 5, outer one is as fast as possible for more power when launch, and more torque on other side so nothing will slip or break </li>
+              <li>Standoff instead of axle because of bending</li>
+            </ul>
+            <li>Two Bar Cap Intake/Lift</li>
+            <ul>
+              <li>2 bar lift as opposed to the more common 4 bar, 6 bar, or rd4b designs</li>
+              <li>2 bar is only truly effective for the short posts, which may seem like a big issue, but it is much faster, which is far more important for caps; caps are not a popular scoring method since they take too long, 2 bar is most effective work around</li>
+              <li>Lift flips out rather than just being a regular 2 bar to fit in size. This is due to our centered catapult but also allows us to precisely tune the positioning better</li>
+              <li>4 bar, 6 bar, rd4b take precise driving, 2 bar can be tuned to minimize human error</li>
+              <li>Positioning to put cap on post is to simply slam the robot against the wall aligned with the center to the post with a 2 inch leeway due to the shape of the cap</li>
+              <li>When it places on post, it automatically flips the cap as well</li>
+              <li>Can also be used as a descorer for both the high post and low post</li>
+              <li>Only low post is not a big issue since rarely will 4+ caps be scored on posts in a match</li>
+              <li>Flipper focused on ground caps, this focuses on posts since its much faster to have separate mechanisms for them</li>
+              <li>Works entirely around catapult due to flipout mechanism </li>
+              <li>Can be used to push center parked robots</li>
+              <li>Can descore like a normal 2 bar descorer, most efficient cap mechanism.</li>
+            </ul>
+          </ul>
+        </div>
+      </section>
+      <section id="contact">
+        <div class="container">
+          <h1><span class="blue">Contact</span> Us</h1>
+          <div class="row">
+            <div class="col-md-4">
+              <p><span class="fa fa-map-marker-alt margin-right red"></span>Dublin, CA</p>
+              <p><span class="fa fa-envelope margin-right blue"></span>gaelforcer@gmail.com</p>
+            </div>
+            <div class="col-md-8">
+              <form action="https://formspree.io/gaelforcer@gmail.com" method="POST">
+                <div>
+                  <input type="text" name="Name" placeholder="Name" required />
+                  <span class="underline"></span>
+                </div>
+                <div>
+                  <input type="email" name="Mail" placeholder="Email" required />
+                  <span class="underline"></span>
+                </div>
+                <div>
+                  <textarea name="Message" placeholder="Question/Comment/Concern"></textarea>
+                  <span class="underline"></span>
+                </div>
+                <button type="submit" class="send-btn">Send <span class="fa fa-paper-plane"></span></button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Made with <3 by Jacob - https://github.com/js0mmer -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/particles.min.js"></script>
+    <script>
+      particlesJS("particles-js", {"particles":{"number":{"value":160,"density":{"enable":true,"value_area":800}},"color":{"value":"#ffffff"},"shape":{"type":"circle","stroke":{"width":0,"color":"#000000"},"polygon":{"nb_sides":5},"image":{"src":"img/github.svg","width":100,"height":100}},"opacity":{"value":1,"random":true,"anim":{"enable":true,"speed":1,"opacity_min":0,"sync":false}},"size":{"value":3,"random":true,"anim":{"enable":false,"speed":4,"size_min":0.3,"sync":false}},"line_linked":{"enable":false,"distance":150,"color":"#ffffff","opacity":0.4,"width":1},"move":{"enable":true,"speed":1,"direction":"none","random":true,"straight":false,"out_mode":"out","bounce":false,"attract":{"enable":false,"rotateX":600,"rotateY":600}}},"interactivity":{"detect_on":"canvas","events":{"onhover":{"enable":false,"mode":"bubble"},"onclick":{"enable":false,"mode":"repulse"},"resize":true},"modes":{"grab":{"distance":400,"line_linked":{"opacity":1}},"bubble":{"distance":250,"size":0,"duration":2,"opacity":0,"speed":3},"repulse":{"distance":400,"duration":0.4},"push":{"particles_nb":4},"remove":{"particles_nb":2}}},"retina_detect":true});
+
+      // Sticky navbar & banner arrow
+      $(window).scroll(function() {
+        if ($(window).scrollTop() > 100) {
+          $('.navbar').addClass('sticky');
+          $('.fa-chevron-down').css('opacity', 0);
+        } else {
+          $('.navbar').removeClass('sticky');
+          $('.fa-chevron-down').css('opacity', 1);
+        }
+      });
+
+      // Mobile navigation
+      $('.toggle').click(function() {
+        $('.navbar').toggleClass('open');
+      });
+
+      $('.navbar li a').click(function() {
+        $('.navbar').removeClass('open');
+      });
+
+      // Anchor links
+      $(document).on('click', 'a[href^="#"]', function(e) {
+        e.preventDefault();
+
+        if ($.attr(this, 'href') == '#') {
+          $('html, body').animate({
+            scrollTop: 0
+          }, 500);
+        } else {
+          $('html, body').animate({
+            scrollTop: $($.attr(this, 'href')).offset().top - 64 // navbar blocks top 64 pixels
+          }, 500);
+        }
+      });
+
+      // Form submit button
+      $('.send-btn').click(function() {
+        if ($('input[type=text]').val().length > 0 && $('input[type=email]').val().length > 0 && $('input[type=email]').val().includes("@")) $(this).addClass('sending');
+      });
+    </script>
+    <!-- Navbar underline -->
+    <script>
+      var menu = document.getElementsByClassName('nav');
+      navActiveBar(menu[0], (tab, width, tempMarginLeft) => {                          
+        tab.onmouseover = () => { // when tab is hovered over
+          $('.active').css({width: width + '%', 'margin-left': tempMarginLeft + '%'}); // adjust active bar
+        }
+
+        $('main').mouseover(() => { // move underline back to active tab when user unhovers other tab
+          scrollProgress(tab, width, tempMarginLeft);
+        });
+
+        $(window).scroll(() => { // move active underline as user scrolls
+          scrollProgress(tab, width, tempMarginLeft);
+        });
+      });
+
+      function scrollProgress(tab, width, tempMarginLeft) { // adjust active tab based on section user is currently viewing
+        var scrollBottom = $(window).scrollTop() + $(window).height();
+          var section = $($(tab).children().first().attr("href")); // select correct section from href attribute of tab
+
+          if (scrollBottom > section.offset().top + section.height() / 2) { // if scroll bottom is at least halfway through section then move the active bar
+            $('.active').css({width: width + '%', 'margin-left': tempMarginLeft + '%'}); // adjust active bar
+          }
+      }
+
+      function navActiveBar(menu, callback) {
+        let menu_width = menu.offsetWidth;
+        menu = menu.getElementsByTagName('li'); // select only li tags (all the tabs)
+        var marginLeft = [];
+        // Loop through nav children (li)
+        [].forEach.call(menu, (tab, index) => {
+          // Dynamic width/margin calculation
+          var width = getPercentage(tab.offsetWidth + 35, menu_width); // 35px left margin
+          var tempMarginLeft = 0;
+          // don't modify first element's positioning
+          if (index != 0) tempMarginLeft = marginLeft.reduce((a, b) => a + b, 0); // set temp margin of active bar to sum of marginLefts
+          callback(tab, width, tempMarginLeft); // set mouse event hover/click
+          marginLeft.push(width); // store width in array to use for positioning underlines on following tabs
+        });
+      }
+
+      function getPercentage(min, max) {
+        return min / max * 100;
+      }
+    </script>
+  </body>
+</html>
