@@ -109,17 +109,13 @@ main, #contact {
   position: absolute;
   text-decoration: none;
   left: 50%;
-  transform: translate(-50%, 0%);
+  transform: translate(-50%, 0);
   bottom: 60px;
   transition: opacity 0.5s;
   animation: bounce 2.5s infinite;
   font-size: 3.5rem;
   color: white;
   z-index: 10;
-}
-
-.banner .fa-chevron-down:hover {
-  cursor: pointer;
 }
 
 /* ========== */
@@ -421,11 +417,11 @@ input:focus ~ .underline, textarea:focus ~ .underline {
 
 @keyframes bounce {
   0% {
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, 0);
   } 50% {
     transform: translate(-50%, 50%);
   } 100% {
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, 0);
   }
 }
 
