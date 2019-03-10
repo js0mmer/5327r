@@ -118,6 +118,10 @@ main, #contact {
   z-index: 10;
 }
 
+.banner .fa-chevron-down:hover {
+  cursor: pointer;
+}
+
 /* ========== */
 /* NAV TOGGLE */
 /* ========== */
