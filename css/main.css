@@ -24,6 +24,11 @@ img {
   max-height: 100%;
 }
 
+main {
+  background: white;
+  padding-top: 30px;
+}
+
 main, #contact {
   margin-bottom: 30px;
 }
@@ -73,7 +78,7 @@ main, #contact {
 
 .banner {
   height: calc(100vh + 5vw);
-  background: gray;
+  background: none;
   border-radius: 0;
 }
 
@@ -91,10 +96,12 @@ main, #contact {
 
 #particles-js {
   position: absolute;
+  background: gray;
   top: 0;
   left: 0;
   width: 100%;
   height: calc(100vh + 5vw);
+  z-index: -10;
 }
 
 .banner img {
